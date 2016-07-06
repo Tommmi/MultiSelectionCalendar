@@ -3,8 +3,6 @@
 
 ![Calendar](Documentation/Calendar1.jpg)
 
-## Usage
-
 ## Programming
 
 ### How To Install
