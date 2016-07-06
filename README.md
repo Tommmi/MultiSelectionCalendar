@@ -1,7 +1,7 @@
 # MultiSelectionCalendar
 `MultiSelectionCalendar` is a JavaScript calendar control for marking several date ranges and associate them to different selection groups.
 
-![Calendar](Documentation\Calendar1.jpg)
+![Calendar](Documentation/Calendar1.jpg)
 
 ## How To Install
 [Download](https://github.com/Tommmi/MultiSelectionCalendar.git) the latest version of MultiSelectionCalendar from Github repository and copy the following JavaScript files and style sheets to your web project:
