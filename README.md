@@ -110,6 +110,9 @@ namespace Saltarelle.MultiSelectionCalendar
 	}
 }
 ```
+Use the static function `Init()` to reparse the HTML-DOM, when having inserted new calendar controls.
+Use the static function `GetDateRangesFromString()` to parse a date range list from a string.
+Use the static function `GetStringFromDateRanges()` to encode a list of date ranges to a string.
 
     
   
