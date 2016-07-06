@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html ng-app="multiSelectorCalendarTest" ng-controller="MyController">
+<head>
+    <meta charset="utf-8">
+    <title>test of MultiSelectionCalendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="styles/qunit-1.12.0.css" rel="stylesheet" />
+    <link href="styles/MultiSelectionCalendar.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <h1>Test of MultiSelectionCalendar</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 clearfix">
+                <div class="pull-right">
+                    <input type="text" name="dateRanges" class="multiSelectionCalendar" enabledRanges="25.09.2015-15.10.2015;03.11.2015-12.11.2015" selectionIdx="{{activeColorIdx}}" language="de" ng-model="rangesAsString" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="radio">
+                    <label><input type="radio" ng-model="activeColorIdx" value="1">rot</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" ng-model="activeColorIdx" value="2">grün</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" ng-model="activeColorIdx" value="3">blau</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" ng-model="activeColorIdx" value="0">löschen</label>
+                </div>
+                <div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">selected ranges</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div data-ng-repeat="rangeTxt in rangesAsFormattedDisplayTexts">
+                                <span class="range">{{rangeTxt}}</span><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/jquery-1.10.2.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/mscorlib.min.js"></script>
+    <script src="scripts/linq.js"></script>
+    <script src="scripts/qunit-1.12.0.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/saltarelle.angularjs.js"></script>
+    <script src="scripts/saltarelle.utils.js"></script>
+    <script src="scripts/multiselectioncalendar.test.script.js"></script>
+    <script src="scripts/multiselectioncalendarresource.es.js"></script>
+    <script src="scripts/multiselectioncalendarresource.js"></script>
+    <script src="scripts/multiselectioncalendarresource.en.min.js"></script>
+    <script src="scripts/jquery.mousewheel.min.js"></script>
+    <script src="scripts/multiselectioncalendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+﻿@calendarWidth:300px;
+@theme-color:#358A38;
+@current-month-color:#CDCDCD;
+@current-month-color_sel1:#E95858;
+@current-month-color_sel2:#58EA58;
+@current-month-color_sel3:#5858EA;
+@current-month-color_sel4:#EAA158;
+@current-month-color_sel5:#EAEA58;
+@current-month-color_sel6:#58EAEA;
+@current-month-color_sel7:#58A1EA;
+@current-month-color_sel8:#A158EA;
+@current-month-color_sel9:#EA58EA;
+@label-color:white;
+@label-color-disabled:gray;
+@calendar-border-width:3px;
+@calendar-padding:4px;
+@text-color:black;
+@other-month-background:white;
+@current-month-background: #F0F0F0;
+@rowHeight:40px;
+@visibleCountOfRows:6;
+
+@calendarHeight:@rowHeight * @visibleCountOfRows + 2 * (@calendar-padding + @calendar-border-width) + 70px;
+@calendarDataHeight:@rowHeight * @visibleCountOfRows;
+@column-width: ((@calendarWidth - 2 * (@calendar-padding + @calendar-border-width)) / 7);
+@border-color:@current-month-color;
+@label-background-color:lighten(@theme-color,10%);
+@label-background-color-disabled:desaturate(@label-background-color,20%);
+@other-month-color:@current-month-color;
+@other-month-color_sel1:@current-month-color_sel1;
+@other-month-color_sel2:@current-month-color_sel2;
+@other-month-color_sel3:@current-month-color_sel3;
+@other-month-color_sel4:@current-month-color_sel4;
+@other-month-color_sel5:@current-month-color_sel5;
+@other-month-color_sel6:@current-month-color_sel6;
+@other-month-color_sel7:@current-month-color_sel7;
+@other-month-color_sel8:@current-month-color_sel8;
+@other-month-color_sel9:@current-month-color_sel9;
+
+.unselectable() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.multiSelectionCalendar {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+div.multiSelectionCalendar {
+    width:@calendarWidth;
+    height:@calendarHeight;
+    padding:@calendar-padding;
+    border:@calendar-border-width solid @border-color;
+    color:@text-color;
+    ::selection, ::-moz-selection {
+        background-color:transparent;
+        color:@text-color;
+    }
+    .title {
+        .unselectable()
+        background-color:@theme-color;
+        padding:5px;
+    }
+    .table {
+        text-align:center;
+        position:relative;
+        tbody {
+            overflow-y:hidden;
+            height:@calendarDataHeight;
+            position:absolute;
+            top:@rowHeight;
+            tr {
+                td {
+                    width:@column-width;
+                    height:@rowHeight;
+                    border-width:0;
+                    padding:5px;
+                    .unselectable();                    
+                    div {
+                        padding:3px;
+                        .unselectable();                    
+                    }
+                }
+            }
+        }
+        thead {
+            th {
+                text-align:center;
+                padding:5px 2px 5px 2px;
+                width:@column-width;
+                height:@rowHeight;
+                .unselectable();                    
+            }
+        }
+    }
+
+    .cm {
+        background:@current-month-background;
+    }
+
+    .om {
+        background:@other-month-background;
+    }
+
+    .cmes1 {
+        background-color:@current-month-color_sel1;
+    }
+
+    .cmes2 {
+        background-color:@current-month-color_sel2;
+    }
+
+    .cmes3 {
+        background-color:@current-month-color_sel3;
+    }
+
+    .cmes4 {
+        background-color:@current-month-color_sel4;
+    }
+
+    .cmes5 {
+        background-color:@current-month-color_sel5;
+    }
+
+    .cmes6 {
+        background-color:@current-month-color_sel6;
+    }
+
+    .cmes7 {
+        background-color:@current-month-color_sel7;
+    }
+
+    .cmes8 {
+        background-color:@current-month-color_sel8;
+    }
+
+    .cmes9 {
+        background-color:@current-month-color_sel9;
+    }
+
+    .omes1 {
+        background-color:@other-month-color_sel1;
+    }
+
+    .omes2 {
+        background-color:@other-month-color_sel2;
+    }
+
+    .omes3 {
+        background-color:@other-month-color_sel3;
+    }
+
+    .omes4 {
+        background-color:@other-month-color_sel4;
+    }
+
+    .omes5 {
+        background-color:@other-month-color_sel5;
+    }
+
+    .omes6 {
+        background-color:@other-month-color_sel6;
+    }
+
+    .omes7 {
+        background-color:@other-month-color_sel7;
+    }
+
+    .omes8 {
+        background-color:@other-month-color_sel8;
+    }
+
+    .omes9 {
+        background-color:@other-month-color_sel9;
+    }
+
+    .ome {
+        background-color:@other-month-color;
+    }
+
+    .cme {
+        background-color:@current-month-color;
+    }
+
+    .omd {
+        background-color:transparent;
+        color:fadeout(black,40%);
+        ::selection, ::-moz-selection {
+            color:fadeout(black,40%);
+        }
+    }
+
+    .cmd {
+        background-color:transparent;
+        color:fadeout(black,40%);
+        ::selection, ::-moz-selection {
+            color:fadeout(black,40%);
+        }
+    }
+
+    .cmes1:hover {
+        background-color:lighten(@current-month-color_sel1,9%);
+    }
+
+    .cmes2:hover {
+        background-color:lighten(@current-month-color_sel2,9%);
+    }
+
+    .cmes3:hover {
+        background-color:lighten(@current-month-color_sel3,9%);
+    }
+
+    .cmes4:hover {
+        background-color:lighten(@current-month-color_sel4,9%);
+    }
+
+    .cmes5:hover {
+        background-color:lighten(@current-month-color_sel5,9%);
+    }
+
+    .cmes6:hover {
+        background-color:lighten(@current-month-color_sel6,9%);
+    }
+
+    .cmes7:hover {
+        background-color:lighten(@current-month-color_sel7,9%);
+    }
+
+    .cmes8:hover {
+        background-color:lighten(@current-month-color_sel8,9%);
+    }
+
+    .cmes9:hover {
+        background-color:lighten(@current-month-color_sel9,9%);
+    }
+
+    .omes1:hover {
+        background-color:lighten(@other-month-color_sel1,9%);
+    }
+
+    .omes2:hover {
+        background-color:lighten(@other-month-color_sel2,9%);
+    }
+
+    .omes3:hover {
+        background-color:lighten(@other-month-color_sel3,9%);
+    }
+
+    .omes4:hover {
+        background-color:lighten(@other-month-color_sel4,9%);
+    }
+
+    .omes5:hover {
+        background-color:lighten(@other-month-color_sel5,9%);
+    }
+
+    .omes6:hover {
+        background-color:lighten(@other-month-color_sel6,9%);
+    }
+
+    .omes7:hover {
+        background-color:lighten(@other-month-color_sel7,9%);
+    }
+
+    .omes8:hover {
+        background-color:lighten(@other-month-color_sel8,9%);
+    }
+
+    .omes9:hover {
+        background-color:lighten(@other-month-color_sel9,9%);
+    }
+
+    .ome:hover {
+        background-color:lighten(@other-month-color,9%);
+    }
+
+    .cme:hover {
+        background-color:lighten(@current-month-color,9%);
+    }
+
+
+    a.disabled {
+        background-color:@label-background-color-disabled;
+        color:@label-color-disabled;                
+    }
+
+    a.enabled {
+        background-color:@label-background-color;
+        color:@label-color;                
+    }
+
+    a.disabled:hover, a.disabled:focus, a.disabled:active {
+        background-color:@label-background-color-disabled;
+        color:@label-color-disabled;
+    }
+
+    a.enabled:hover {
+        background-color:lighten(@label-background-color,9%);
+        color:lighten(@label-color,9%); 
+    }
+
+    .nextMonth {
+        padding:4px 10px 3px 12px;
+    }
+
+    .previousMonth {
+        padding:4px 12px 3px 10px;
+    }
+
+} 
+
