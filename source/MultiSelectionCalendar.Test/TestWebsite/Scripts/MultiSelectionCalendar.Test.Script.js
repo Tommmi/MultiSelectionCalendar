@@ -73,7 +73,7 @@
 		$updateRanges: function() {
 			this.$_scope.rangesAsString = global.MultiSelectionCalendar.MultiSelectionCalendar.getStringFromDateRanges(Enumerable.from(this.$_scope.ranges).toArray());
 			this.$_scope.rangesAsFormattedDisplayTexts = Enumerable.from(this.$_scope.ranges).select(function(r) {
-				return ss.formatString('{0}: {1:yy.MM.dd} - {2:yy.MM.dd}', r.get_selectionIdx().toString(), r.get_start(), r.get_end());
+				return ss.formatString('{0}: {1:dd.MM.yyyy} - {2:dd.MM.yyyy}', r.get_selectionIdx().toString(), r.get_start(), r.get_end());
 			}).toArray();
 		}
 	});

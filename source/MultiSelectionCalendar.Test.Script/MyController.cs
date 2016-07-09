@@ -79,7 +79,7 @@ namespace MultiSelectionCalendar.Test.Script
 			_scope.rangesAsString = Saltarelle.MultiSelectionCalendar.MultiSelectionCalendar.GetStringFromDateRanges(_scope.ranges.ToList());
 			_scope.rangesAsFormattedDisplayTexts = _scope.ranges
 				.Select(r => string.Format(
-					"{0}: {1:yy.MM.dd} - {2:yy.MM.dd}",
+					"{0}: {1:dd.MM.yyyy} - {2:dd.MM.yyyy}",
 					((SelectionOptionEnum) r.SelectionIdx).ToString(),
 					r.Start,
 					r.End))
