@@ -6,6 +6,9 @@
 ## Demo
 See [demo](https://dl.dropboxusercontent.com/u/46493524/MultiSelectionCalendar/MultiSelectionCalendarTestPage.html) here.
 
+## History
+see [history](Documentation/history.md)
+
 ## Programming
 
 ### How To Install
