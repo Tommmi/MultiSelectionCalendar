@@ -13,15 +13,15 @@ see [history](Documentation/history.md)
 
 ### How To Install
 [Download](https://github.com/Tommmi/MultiSelectionCalendar/archive/master.zip) the latest version of MultiSelectionCalendar from Github repository and copy the following JavaScript files and style sheets to your web project:
--   [{repository}\lib\jquery.mousewheel.min.js](lib/jquery.mousewheel.min.js) (third party [library](https://github.com/jquery/jquery-mousewheel))
--   [{repository}\lib\mscorlib.min.js](lib/mscorlib.min.js) (third party [library](https://github.com/Saltarelle/SaltarelleCompiler))
--   [{repository}\lib\linq.min.js](lib/linq.min.js) (third party [library](https://github.com/Saltarelle/SaltarelleLinq))
--   [{repository}\lib\MultiSelectionCalendarResource.js](lib/MultiSelectionCalendarResource.js)
--   optional: [{repository}\lib\MultiSelectionCalendarResource.en.js](lib/MultiSelectionCalendarResource.en.js)
--   optional: [{repository}\lib\MultiSelectionCalendarResource.es.js](lib/MultiSelectionCalendarResource.es.js)
--   [{repository}\lib\MultiSelectionCalendar.min.js](lib/MultiSelectionCalendar.min.js)
--   [{repository}\lib\MultiSelectionCalendar.less](lib/MultiSelectionCalendar.less)
--   optional: [{repository}\lib\MultiSelectionCalendar.css](lib/MultiSelectionCalendar.css)
+-   [{repository}\lib\Scripts\jquery.mousewheel.min.js](lib/Scripts/jquery.mousewheel.min.js) (third party [library](https://github.com/jquery/jquery-mousewheel))
+-   [{repository}\lib\Scripts\mscorlib.min.js](lib/Scripts/mscorlib.min.js) (third party [library](https://github.com/Saltarelle/SaltarelleCompiler))
+-   [{repository}\lib\Scripts\linq.min.js](lib/Scripts/linq.min.js) (third party [library](https://github.com/Saltarelle/SaltarelleLinq))
+-   [{repository}\lib\Scripts\multiselectioncalendarresource.js](lib/Scripts/multiselectioncalendarresource.js)
+-   optional: [{repository}\lib\Scripts\multiselectioncalendarresource.en.js](lib/Scripts/multiselectioncalendarresource.en.js)
+-   optional: [{repository}\lib\Scripts\multiselectioncalendarresource.es.js](lib/Scripts/multiselectioncalendarresource.es.js)
+-   [{repository}\lib\Scripts\multiselectioncalendar.min.js](lib/Scripts/multiselectioncalendar.min.js)
+-   [{repository}\lib\Styles\multiselectioncalendar.less](lib/Styles/multiselectioncalendar.less)
+-   optional: [{repository}\lib\Styles\multiselectioncalendar.css](lib/Styles/multiselectioncalendar.css)
 
 ### Simple Example
 Insert an input tag of type text into your webpage and assign the CSS class "multiSelectionCalendar":
@@ -30,7 +30,7 @@ Insert an input tag of type text into your webpage and assign the CSS class "mul
 <html>
 <head>
     <link href="styles/bootstrap.css" rel="stylesheet" />
-    <link href="styles/MultiSelectionCalendar.css" rel="stylesheet" />
+    <link href="styles/multiselectioncalendar.css" rel="stylesheet" />
 </head>
 <body>
     <input 
@@ -84,7 +84,7 @@ To change the selection color please change the attribute `selectionidx` to a na
     Format: {start date}-{end date};{start date}-{end date};...
 * `language`:  
     ISO code of the active language. Note ! The language dependent strings are coded in the files
-    `MultiSelectionCalendarResource...js`. Feel free to add new languages.  
+    `multiselectioncalendarresource...js`. Feel free to add new languages.  
     example: "en"  
     Default: ""  :means default language (it's currently german)  
     Format: "en","de","es", "default",""
