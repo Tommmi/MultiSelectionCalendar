@@ -9,7 +9,6 @@
 ::**********************************************************
 
 del "%1..\packages\Saltarelle.MultiSelectionCalendar\*.*" /f /q /s
-
 copy "%1bin\%2\%3" "%1..\packages\Saltarelle.MultiSelectionCalendar\%3"
 
 
@@ -17,6 +16,7 @@ copy "%1bin\%2\%3" "%1..\packages\Saltarelle.MultiSelectionCalendar\%3"
 :: copy output to ..\..\lib
 ::**********************************************************
 md "%1..\..\lib\Saltarelle.MultiSelectionCalendar"
+del "%1..\..\lib\Saltarelle.MultiSelectionCalendar\*.*" /f /q /s
 copy "%1bin\%2\%3" "%1..\..\lib\Saltarelle.MultiSelectionCalendar\%3"
 
 
