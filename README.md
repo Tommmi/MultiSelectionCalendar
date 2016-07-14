@@ -50,7 +50,7 @@ Insert an input tag of type text into your webpage and assign the CSS class "mul
 </html>
 ```
 You'll get a calendar showing the current month. No date ranges are preselected since attribute `value` wasn't set.
-Now you can select single dates and date ranges with ethe mouse. The selected dates will be assigned to selection index 2.
+Now you can select single dates and date ranges with the mouse. The selected dates will be assigned to selection index 2.
 If you do so, the value of the input field will change automatically to some value like this:
 ```html
     <input 

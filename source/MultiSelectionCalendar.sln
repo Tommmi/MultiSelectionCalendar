@@ -6,7 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DBD158D6-D1DD-4650-B9B1-F6DAD2D21CC1}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
-		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectionCalendar.Test", "MultiSelectionCalendar.Test\MultiSelectionCalendar.Test.csproj", "{2354C10B-56A6-46C5-A969-A22484DA7165}"
@@ -25,6 +24,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saltarelle.MultiSelectionCalendar", "Saltarelle.MultiSelectionCalendar\Saltarelle.MultiSelectionCalendar.csproj", "{62128900-B393-4182-B18A-4D847AC262BB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{ABC82F19-FF81-453B-B5FC-4823D740F77A} = {ABC82F19-FF81-453B-B5FC-4823D740F77A}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentation", "{B79D3261-60B7-47FE-933A-D98952CB9CB9}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\Calendar1.jpg = ..\Documentation\Calendar1.jpg
+		..\Documentation\history.md = ..\Documentation\history.md
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Global
