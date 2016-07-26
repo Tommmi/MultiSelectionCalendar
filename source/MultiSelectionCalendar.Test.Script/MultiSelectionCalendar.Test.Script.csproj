@@ -62,14 +62,15 @@
     </Reference>
     <Reference Include="Saltarelle.MultiSelectionCalendar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Saltarelle.MultiSelectionCalendar\Saltarelle.MultiSelectionCalendar.dll</HintPath>
+      <HintPath>..\external\Saltarelle.MultiSelectionCalendar\Saltarelle.MultiSelectionCalendar.dll</HintPath>
     </Reference>
     <Reference Include="Saltarelle.QUnit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a4048e8fcc593f14, processorArchitecture=MSIL">
       <HintPath>..\packages\Saltarelle.QUnit.1.12.1\lib\Saltarelle.QUnit.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Saltarelle.Utils">
-      <HintPath>..\packages\Saltarelle.Utils\Saltarelle.Utils.dll</HintPath>
+    <Reference Include="Saltarelle.Utils, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external\Saltarelle.Utils\Saltarelle.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Saltarelle.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a4048e8fcc593f14, processorArchitecture=MSIL">
       <HintPath>..\packages\Saltarelle.Web.3.1.0\lib\Saltarelle.Web.dll</HintPath>

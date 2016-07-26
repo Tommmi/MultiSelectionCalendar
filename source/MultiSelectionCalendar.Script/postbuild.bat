@@ -24,12 +24,12 @@ goto lesscompile
 ::**********************************************************
 :: copy output to ..\packages\MultiSelectionCalendar
 ::**********************************************************
-del "%1..\packages\MultiSelectionCalendar\*.*" /f /q /s
+del "%1..\external\MultiSelectionCalendar\*.*" /f /q /s
 
-copy "%1bin\%2\*.js" "%1..\packages\MultiSelectionCalendar\*.js"
-copy "%1Translations\*.js" "%1..\packages\MultiSelectionCalendar\*.js"
-copy "%1multiselectioncalendar.less" "%1..\packages\MultiSelectionCalendar\multiselectioncalendar.less"
-copy "%1multiselectioncalendar.css" "%1..\packages\MultiSelectionCalendar\multiselectioncalendar.css"
+copy "%1bin\%2\*.js" "%1..\external\MultiSelectionCalendar\*.js"
+copy "%1Translations\*.js" "%1..\external\MultiSelectionCalendar\*.js"
+copy "%1multiselectioncalendar.less" "%1..\external\MultiSelectionCalendar\multiselectioncalendar.less"
+copy "%1multiselectioncalendar.css" "%1..\external\MultiSelectionCalendar\multiselectioncalendar.css"
 
 ::**********************************************************
 :: copy output to ..\..\lib
@@ -46,9 +46,9 @@ copy "%1multiselectioncalendar.css" "%1..\..\lib\Styles\multiselectioncalendar.c
 ::**********************************************************
 :: copy referenced libraries to ..\..\lib
 ::**********************************************************
-copy "%1..\packages\jquery-mousewheel\jquery.mousewheel.js" "%1..\..\lib\Scripts\jquery.mousewheel.js"
-copy "%1..\packages\jquery-mousewheel\jquery.mousewheel.min.js" "%1..\..\lib\Scripts\jquery.mousewheel.min.js"
-copy "%1..\packages\Saltarelle.Utils\*.js" "%1..\..\lib\Scripts\*.js"
+copy "%1..\external\jquery-mousewheel\jquery.mousewheel.js" "%1..\..\lib\Scripts\jquery.mousewheel.js"
+copy "%1..\external\jquery-mousewheel\jquery.mousewheel.min.js" "%1..\..\lib\Scripts\jquery.mousewheel.min.js"
+copy "%1..\external\Saltarelle.Utils\*.js" "%1..\..\lib\Scripts\*.js"
 copy "%1..\packages\Saltarelle.Linq.2.4.0\*.js" "%1..\..\lib\Scripts\*.js"
 copy "%1..\packages\Saltarelle.Runtime.2.7.0\*.js" "%1..\..\lib\Scripts\*.js"
 

@@ -8,8 +8,8 @@
 :: copy output to ..\packages\MultiSelectionCalendar
 ::**********************************************************
 
-del "%1..\packages\Saltarelle.MultiSelectionCalendar\*.*" /f /q /s
-copy "%1bin\%2\%3" "%1..\packages\Saltarelle.MultiSelectionCalendar\%3"
+del "%1..\external\Saltarelle.MultiSelectionCalendar\*.*" /f /q /s
+copy "%1bin\%2\%3" "%1..\external\Saltarelle.MultiSelectionCalendar\%3"
 
 
 ::**********************************************************
