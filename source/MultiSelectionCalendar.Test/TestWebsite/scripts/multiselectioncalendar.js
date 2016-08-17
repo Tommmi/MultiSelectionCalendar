@@ -792,6 +792,9 @@
 			var offset = tBody.offset();
 			var pos = new $MultiSelectionCalendar_Position(offset.left, offset.top);
 			var visiblePortRect = new $MultiSelectionCalendar_Rectangle(pos.get_y(), pos.get_x() + tBody.width(), pos.get_y() + tBody.height(), pos.get_x());
+			if (visiblePortRect.get_width() === 0) {
+				return;
+			}
 			var scrollPos = this.$getCurrentScrollY();
 			var weekNb = ss.Int32.div((x - visiblePortRect.get_left()) * 7, visiblePortRect.get_width());
 			if (weekNb < 0) {
@@ -906,6 +909,7 @@
 			var selectedRangesTxt = $MultiSelectionCalendar_MultiSelectionCalendar.getStringFromDateRanges(selectedRanges);
 			this.$_currentValueOfInputElement = selectedRangesTxt;
 			this.get_$inputElement().value = selectedRangesTxt;
+			this.get_$inputElement().setAttribute('value', selectedRangesTxt);
 			$(this.get_$inputElement()).trigger('change');
 		},
 		$scrollImediately: function(scrollHeight) {

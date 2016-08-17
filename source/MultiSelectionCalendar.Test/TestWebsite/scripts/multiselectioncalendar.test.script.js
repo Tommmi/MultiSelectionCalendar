@@ -10,7 +10,7 @@
 	var $MultiSelectionCalendar_Test_Script_MyController = function(_scope) {
 		this.$_scope = null;
 		this.$_scope = Saltarelle.Utils.Utils.enhance($MultiSelectionCalendar_Test_Script_MyController$MyScope, AngularJS.Scope).call(null, _scope);
-		// siehe TUtils
+		// see TUtils
 		var $t4 = this.$_scope;
 		var $t1 = { ntype: 38, type: $MultiSelectionCalendar_Test_Script_MyController$MyScope, name: 's' };
 		var $t2 = { typeDef: $MultiSelectionCalendar_Test_Script_MyController$MyScope, name: 'ranges', type: 4, returnType: Array, sname: 'ranges' };

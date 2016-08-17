@@ -42,7 +42,7 @@ namespace MultiSelectionCalendar.Test.Script
 
 		public MyController(Scope _scope)
 		{
-			this._scope = Utils.Enhance<MyScope, Scope>(_scope); // siehe TUtils
+			this._scope = Utils.Enhance<MyScope, Scope>(_scope); // see TUtils
 
 			this._scope.WatchProperty(s => s.ranges, OnRangesChanged);
 			this._scope.WatchProperty(s => s.rangesAsString, OnRangesAsStringChanged);

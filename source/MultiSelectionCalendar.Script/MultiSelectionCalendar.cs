@@ -659,6 +659,8 @@ namespace MultiSelectionCalendar
 			var offset = tBody.GetOffset();
 			var pos = new Position(offset.Left,offset.Top);
 			var visiblePortRect = new Rectangle(pos.Y,pos.X+tBody.GetWidth(),pos.Y+tBody.GetHeight(),pos.X);
+			if (visiblePortRect.Width == 0)
+				return;
 			var scrollPos = GetCurrentScrollY();
 			var weekNb = (x - visiblePortRect.Left) * 7 / visiblePortRect.Width;
 			if (weekNb < 0)
@@ -795,7 +797,8 @@ namespace MultiSelectionCalendar
 
 			var selectedRangesTxt = GetStringFromDateRanges(selectedRanges);
 			_currentValueOfInputElement = selectedRangesTxt;
-			InputElement.Value = selectedRangesTxt;
+ 			InputElement.Value = selectedRangesTxt;
+			InputElement.SetAttribute("value",selectedRangesTxt);
 			jQuery.FromElement(InputElement).Trigger("change");
 		}
 
