@@ -16,6 +16,7 @@ see [history](Documentation/history.md)
 -   [{repository}\lib\Scripts\jquery.mousewheel.min.js](lib/Scripts/jquery.mousewheel.min.js) (third party [library](https://github.com/jquery/jquery-mousewheel))
 -   [{repository}\lib\Scripts\mscorlib.min.js](lib/Scripts/mscorlib.min.js) (third party [library](https://github.com/Saltarelle/SaltarelleCompiler))
 -   [{repository}\lib\Scripts\linq.min.js](lib/Scripts/linq.min.js) (third party [library](https://github.com/Saltarelle/SaltarelleLinq))
+-   [{repository}\lib\Scripts\saltarelle.utils.min.js](lib/Scripts/saltarelle.utils.min.js)
 -   [{repository}\lib\Scripts\multiselectioncalendarresource.js](lib/Scripts/multiselectioncalendarresource.js)
 -   optional: [{repository}\lib\Scripts\multiselectioncalendarresource.en.js](lib/Scripts/multiselectioncalendarresource.en.js)
 -   optional: [{repository}\lib\Scripts\multiselectioncalendarresource.es.js](lib/Scripts/multiselectioncalendarresource.es.js)
@@ -44,6 +45,7 @@ Insert an input tag of type text into your webpage and assign the CSS class "mul
     <script src="scripts/linq.js"></script>
     <script src="scripts/saltarelle.utils.js"></script>
     <script src="scripts/multiselectioncalendarresource.js"></script>
+    <script src="scripts/multiselectioncalendarresource.en.js"></script>
     <script src="scripts/jquery.mousewheel.min.js"></script>
     <script src="scripts/multiselectioncalendar.js"></script>
 </body>
