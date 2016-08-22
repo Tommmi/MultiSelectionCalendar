@@ -71,6 +71,65 @@
 		$MultiSelectionCalendar_MultiSelectionCalendar.init();
 	};
 	////////////////////////////////////////////////////////////////////////////////
+	// MultiSelectionCalendar.Calendar
+	var $MultiSelectionCalendar_Calendar = function() {
+	};
+	$MultiSelectionCalendar_Calendar.__typeName = 'MultiSelectionCalendar.Calendar';
+	$MultiSelectionCalendar_Calendar.getDateRangesFromString = function(timeRanges) {
+		var ranges = [];
+		if (ss.isNullOrUndefined(timeRanges)) {
+			ranges.push(new $MultiSelectionCalendar_Range(new Date(1940, 1 - 1, 1), new Date(2100, 1 - 1, 1), 0));
+			return ranges;
+		}
+		var $t1 = timeRanges.split(String.fromCharCode(59));
+		for (var $t2 = 0; $t2 < $t1.length; $t2++) {
+			var part = $t1[$t2];
+			var rangeText = part;
+			var selectionIdx = { $: 0 };
+			if (rangeText.length > 1) {
+				if (rangeText.charCodeAt(1) === 58) {
+					ss.Int32.tryParse(String.fromCharCode(rangeText.charCodeAt(0)), selectionIdx);
+					rangeText = rangeText.substring(2);
+				}
+			}
+			var dates = rangeText.split(String.fromCharCode(45));
+			if (dates.length === 2) {
+				var start = $MultiSelectionCalendar_Calendar.$parseExact(dates[0], 'dd.MM.yyyy');
+				var end = $MultiSelectionCalendar_Calendar.$parseExact(dates[1], 'dd.MM.yyyy');
+				if (ss.isValue(start) && ss.isValue(end)) {
+					ranges.push(new $MultiSelectionCalendar_Range(ss.unbox(start), ss.unbox(end), selectionIdx.$));
+				}
+			}
+		}
+		return ranges;
+	};
+	$MultiSelectionCalendar_Calendar.getStringFromDateRanges = function(ranges) {
+		var buf = new ss.StringBuilder();
+		var firstTime = true;
+		for (var $t1 = 0; $t1 < ranges.length; $t1++) {
+			var range = ranges[$t1];
+			if (firstTime) {
+				firstTime = false;
+			}
+			else {
+				buf.append(';');
+			}
+			buf.append(range.get_selectionIdx());
+			buf.append(':');
+			buf.append($MultiSelectionCalendar_Calendar.$dateToString(range.get_start(), 'dd.MM.yyyy'));
+			buf.append('-');
+			buf.append($MultiSelectionCalendar_Calendar.$dateToString(range.get_end(), 'dd.MM.yyyy'));
+		}
+		return buf.toString();
+	};
+	$MultiSelectionCalendar_Calendar.$parseExact = function(date, format) {
+		return ss.parseExactDate(date, format);
+	};
+	$MultiSelectionCalendar_Calendar.$dateToString = function(date, format) {
+		return ss.formatDate(date, format);
+	};
+	global.MultiSelectionCalendar.Calendar = $MultiSelectionCalendar_Calendar;
+	////////////////////////////////////////////////////////////////////////////////
 	// MultiSelectionCalendar.MultiSelectionCalendar
 	var $MultiSelectionCalendar_MultiSelectionCalendar = function(calendarId) {
 		this.$1$CalendarIdField = 0;
@@ -118,51 +177,10 @@
 		}
 	};
 	$MultiSelectionCalendar_MultiSelectionCalendar.getDateRangesFromString = function(timeRanges) {
-		var ranges = [];
-		if (ss.isNullOrUndefined(timeRanges)) {
-			ranges.push(new $MultiSelectionCalendar_Range(new Date(1940, 1 - 1, 1), new Date(2100, 1 - 1, 1), 0));
-			return ranges;
-		}
-		var $t1 = timeRanges.split(String.fromCharCode(59));
-		for (var $t2 = 0; $t2 < $t1.length; $t2++) {
-			var part = $t1[$t2];
-			var rangeText = part;
-			var selectionIdx = { $: 0 };
-			if (rangeText.length > 1) {
-				if (rangeText.charCodeAt(1) === 58) {
-					ss.Int32.tryParse(String.fromCharCode(rangeText.charCodeAt(0)), selectionIdx);
-					rangeText = rangeText.substring(2);
-				}
-			}
-			var dates = rangeText.split(String.fromCharCode(45));
-			if (dates.length === 2) {
-				var start = ss.parseExactDate(dates[0], 'dd.MM.yyyy');
-				var end = ss.parseExactDate(dates[1], 'dd.MM.yyyy');
-				if (ss.isValue(start) && ss.isValue(end)) {
-					ranges.push(new $MultiSelectionCalendar_Range(ss.unbox(start), ss.unbox(end), selectionIdx.$));
-				}
-			}
-		}
-		return ranges;
+		return $MultiSelectionCalendar_Calendar.getDateRangesFromString(timeRanges);
 	};
 	$MultiSelectionCalendar_MultiSelectionCalendar.getStringFromDateRanges = function(ranges) {
-		var buf = new ss.StringBuilder();
-		var firstTime = true;
-		for (var $t1 = 0; $t1 < ranges.length; $t1++) {
-			var range = ranges[$t1];
-			if (firstTime) {
-				firstTime = false;
-			}
-			else {
-				buf.append(';');
-			}
-			buf.append(range.get_selectionIdx());
-			buf.append(':');
-			buf.append(ss.formatDate(range.get_start(), 'dd.MM.yyyy'));
-			buf.append('-');
-			buf.append(ss.formatDate(range.get_end(), 'dd.MM.yyyy'));
-		}
-		return buf.toString();
+		return $MultiSelectionCalendar_Calendar.getStringFromDateRanges(ranges);
 	};
 	$MultiSelectionCalendar_MultiSelectionCalendar.$appendLin = function(text, formattedText, args) {
 		text.appendLine(ss.formatString.apply(null, [formattedText].concat(args)));
@@ -428,6 +446,7 @@
 	});
 	$MultiSelectionCalendar_$DayFieldClassAttribute.$ctor1.prototype = $MultiSelectionCalendar_$DayFieldClassAttribute.prototype;
 	ss.initClass($MultiSelectionCalendar_$Program, $asm, {});
+	ss.initClass($MultiSelectionCalendar_Calendar, $asm, {});
 	ss.initClass($MultiSelectionCalendar_MultiSelectionCalendar, $asm, {
 		get_$calendarId: function() {
 			return this.$1$CalendarIdField;

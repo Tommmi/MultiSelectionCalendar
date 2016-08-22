@@ -71,27 +71,28 @@ To change the selection color please change the attribute `selectionidx` to a na
     `selectionidx="0"` will erase marked dates, when they are being selected now ! Use this feature to let the user
     remove selections.
     possible values: "0", "1", .., "9"   
-    Default: "0"  
+    Default: "0"    
 	You may set `selectionidx` by Angular.
 * `value`:  
     The date ranges which should be edited by the user. `value` will be updated automatically, when user selects dates.  
     example: "2:12.06.2016-20.06.2016;4:25.06.2016-25.06.2016"  
     Default: ""  
-    Format: {selection index}:{start date}-{end date};{selection index}:{start date}-{end date};...
-	You may set `value` by Angular diective ngModel.
+    Format: {selection index}:{start date}-{end date};{selection index}:{start date}-{end date};...  
+	You may set `value` by Angular directive ngModel.
 * `enabledRanges`:  
     The date ranges which may be markable by the user.   
     example: "12.06.2016-20.06.2016;25.06.2016-25.06.2016"  
     Default: ""  (means all dates are enabled)  
-    Format: {start date}-{end date};{start date}-{end date};...
+    Format: {start date}-{end date};{start date}-{end date};...  
 	There is no support for Angular. So changing `enabledRanges` has no effect.
 * `language`:  
     ISO code of the active language. Note ! The language dependent strings are coded in the files
     `multiselectioncalendarresource...js`. Feel free to add new languages.  
     example: "en"  
     Default: ""  :means default language (it's currently german)  
-    Format: "en","de","es", "default",""
+    Format: "en","de","es", "default",""  
 	There is no support for Angular. So changing `language` has no effect.
+
 #### Using MultiSelectionCalendar with Saltarelle
 
 [Saltarelle](https://github.com/Saltarelle/SaltarelleCompiler) is a transpiler to generate JavaScript code from C#.

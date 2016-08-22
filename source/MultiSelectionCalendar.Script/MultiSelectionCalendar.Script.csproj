@@ -34,6 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Calendar.cs" />
+    <Compile Include="CalendarPartial.cs" />
     <Compile Include="DayField.cs" />
     <Compile Include="DayFieldClassAttribute.cs" />
     <Compile Include="Program.cs" />
