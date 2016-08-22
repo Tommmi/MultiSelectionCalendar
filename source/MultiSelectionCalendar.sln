@@ -35,6 +35,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentat
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectionCalendar.Shared", "MultiSelectionCalendar.Shared\MultiSelectionCalendar.Shared.csproj", "{A4ACEE24-8601-4AD0-A57E-5DC007D545AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ABC82F19-FF81-453B-B5FC-4823D740F77A} = {ABC82F19-FF81-453B-B5FC-4823D740F77A}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +62,10 @@ Global
 		{62128900-B393-4182-B18A-4D847AC262BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62128900-B393-4182-B18A-4D847AC262BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62128900-B393-4182-B18A-4D847AC262BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4ACEE24-8601-4AD0-A57E-5DC007D545AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4ACEE24-8601-4AD0-A57E-5DC007D545AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4ACEE24-8601-4AD0-A57E-5DC007D545AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4ACEE24-8601-4AD0-A57E-5DC007D545AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
