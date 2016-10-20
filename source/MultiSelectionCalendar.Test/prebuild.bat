@@ -6,7 +6,7 @@
 
 :: copy multiselectioncalendar.script.js
 if exist %2TestWebsite\scripts\multiselectioncalendar.script.js attrib -r %2TestWebsite\scripts\multiselectioncalendar.script.js
-copy %2..\external\MultiSelectionCalendar\*.js %2TestWebsite\scripts\*.js
+copy %2..\MultiSelectionCalendar.Script\bin\%3\*.js %2TestWebsite\scripts\*.js
 
 :: copy multiselectioncalendar.test.script.js
 if exist %2TestWebsite\scripts\multiselectioncalendar.test.script.js attrib -r %2TestWebsite\scripts\multiselectioncalendar.test.script.js
@@ -17,5 +17,5 @@ if exist %2TestWebsite\scripts\saltarelle.utils.js attrib -r %2TestWebsite\scrip
 copy %2..\external\saltarelle.utils\*.js %2TestWebsite\scripts\*.js
 
 :: copy styles
-copy %2..\external\MultiselectionCalendar\*.css %2TestWebsite\styles\*.css
+copy %2..\MultiselectionCalendar.Script\*.css %2TestWebsite\styles\*.css
 

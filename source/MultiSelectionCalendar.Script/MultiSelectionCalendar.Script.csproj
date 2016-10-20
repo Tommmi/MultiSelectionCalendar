@@ -48,28 +48,30 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="MultiSelectionCalendar.less" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="postbuild.bat" />
     <None Include="prebuild.bat" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
-      <HintPath>$(SolutionDir)packages\Saltarelle.Runtime.2.7.0\tools\Assemblies\mscorlib.dll</HintPath>
+      <HintPath>..\external\Saltarelle.Runtime.2.7.0\tools\Assemblies\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Saltarelle.AngularJS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Saltarelle.Angular.Cs.0.0.9\lib\Saltarelle.AngularJS.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Saltarelle.Angular.Cs.0.0.9\lib\Saltarelle.AngularJS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Saltarelle.jQuery, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a4048e8fcc593f14, processorArchitecture=MSIL">
-      <HintPath>..\packages\Saltarelle.jQuery.1.10.1\lib\Saltarelle.jQuery.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Saltarelle.jQuery.1.10.1\lib\Saltarelle.jQuery.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Saltarelle.Linq, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a4048e8fcc593f14, processorArchitecture=MSIL">
-      <HintPath>..\packages\Saltarelle.Linq.2.4.0\lib\Saltarelle.Linq.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Saltarelle.Linq.2.4.0\lib\Saltarelle.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Saltarelle.QUnit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a4048e8fcc593f14, processorArchitecture=MSIL">
-      <HintPath>..\packages\Saltarelle.QUnit.1.12.1\lib\Saltarelle.QUnit.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Saltarelle.QUnit.1.12.1\lib\Saltarelle.QUnit.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Saltarelle.Utils, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -77,7 +79,7 @@
       <HintPath>..\external\Saltarelle.Utils\Saltarelle.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Saltarelle.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a4048e8fcc593f14, processorArchitecture=MSIL">
-      <HintPath>..\packages\Saltarelle.Web.3.1.0\lib\Saltarelle.Web.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Saltarelle.Web.3.1.0\lib\Saltarelle.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -116,7 +118,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" Condition="!Exists('$(SolutionDir)packages\Saltarelle.Compiler.2.7.0\tools\Saltarelle.Compiler.targets')" />
   <Import Project="$(SolutionDir)packages\Saltarelle.Compiler.2.7.0\tools\Saltarelle.Compiler.targets" Condition="Exists('$(SolutionDir)packages\Saltarelle.Compiler.2.7.0\tools\Saltarelle.Compiler.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)postbuild.bat $(ProjectDir) $(ConfigurationName)</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)postbuild.bat $(ProjectDir) $(ConfigurationName) $(SolutionDir)</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>$(ProjectDir)prebuild.bat $(ProjectDir)</PreBuildEvent>

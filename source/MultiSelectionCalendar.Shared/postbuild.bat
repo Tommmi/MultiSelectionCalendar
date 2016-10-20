@@ -1,4 +1,4 @@
-﻿::
+::
 
 :: %1: project dir
 :: %2: debug release

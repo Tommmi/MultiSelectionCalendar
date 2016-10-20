@@ -454,7 +454,12 @@ namespace MultiSelectionCalendar
 			var selectedRanges = GetSelectedRangesFromInputElement(inputElement);
 			var firstSelectedRange = selectedRanges.OrderBy(r => r.Start).FirstOrDefault();
 			if (firstSelectedRange == null)
+			{
+				var firstEnabledDay = GetFirstEnabledDay();
+				if (firstEnabledDay > DateTime.Now)
+					return firstEnabledDay;
 				return DateTime.Now;
+			}
 			return firstSelectedRange.Start;
 		}
 

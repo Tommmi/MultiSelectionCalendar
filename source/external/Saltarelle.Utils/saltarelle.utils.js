@@ -33,6 +33,32 @@
 	$Saltarelle_Utils_jQueryEventMouseWheel.__typeName = 'Saltarelle.Utils.jQueryEventMouseWheel';
 	global.Saltarelle.Utils.jQueryEventMouseWheel = $Saltarelle_Utils_jQueryEventMouseWheel;
 	////////////////////////////////////////////////////////////////////////////////
+	// Saltarelle.Utils.SmartDeviceImage
+	var $Saltarelle_Utils_SmartDeviceImage = function() {
+	};
+	$Saltarelle_Utils_SmartDeviceImage.__typeName = 'Saltarelle.Utils.SmartDeviceImage';
+	$Saltarelle_Utils_SmartDeviceImage.parseHtml = function() {
+		var images = $('img');
+		var $t1 = images.get();
+		for (var $t2 = 0; $t2 < $t1.length; $t2++) {
+			var image = $t1[$t2];
+			var src = image.src;
+			var isSmartDevice = window.window.innerWidth <= 1000;
+			if (!isSmartDevice) {
+				$Saltarelle_Utils_SmartDeviceImage.$replaceImageAsync(src, image);
+			}
+		}
+	};
+	$Saltarelle_Utils_SmartDeviceImage.$replaceImageAsync = function(src, img) {
+		if (src.length > 4 && src.charCodeAt(src.length - 4) === 46) {
+			var hdSrc = ss.insertString(src, src.length - 4, '-hd');
+			$.get(hdSrc).done(function() {
+				img.src = hdSrc;
+			});
+		}
+	};
+	global.Saltarelle.Utils.SmartDeviceImage = $Saltarelle_Utils_SmartDeviceImage;
+	////////////////////////////////////////////////////////////////////////////////
 	// Saltarelle.Utils.StaticReflection
 	var $Saltarelle_Utils_StaticReflection = function() {
 	};
@@ -164,6 +190,7 @@
 	global.Saltarelle.Utils.Utils = $Saltarelle_Utils_Utils;
 	ss.initClass($Saltarelle_Utils_DateTimeExtension, $asm, {});
 	ss.initClass($Saltarelle_Utils_jQueryEventMouseWheel, $asm, {});
+	ss.initClass($Saltarelle_Utils_SmartDeviceImage, $asm, {});
 	ss.initClass($Saltarelle_Utils_StaticReflection, $asm, {});
 	ss.initClass($Saltarelle_Utils_Utils, $asm, {});
 })();
