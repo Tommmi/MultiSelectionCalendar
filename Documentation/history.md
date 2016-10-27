@@ -1,4 +1,7 @@
 # History of MultiSelectionCalendar
+## Version 1.0.1.1 - 27.10.2016
+no relevant changes - external library Saltarelle.Utils updated
+
 ## Version 1.0.1.1 - 25.10.2016
 no relevant changes - external libraries updated
 

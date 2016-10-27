@@ -27,6 +27,66 @@
 	};
 	global.Saltarelle.Utils.DateTimeExtension = $Saltarelle_Utils_DateTimeExtension;
 	////////////////////////////////////////////////////////////////////////////////
+	// Saltarelle.Utils.IsDirtyCheck
+	var $Saltarelle_Utils_IsDirtyCheck = function() {
+	};
+	$Saltarelle_Utils_IsDirtyCheck.__typeName = 'Saltarelle.Utils.IsDirtyCheck';
+	$Saltarelle_Utils_IsDirtyCheck.init = function() {
+		$(ss.mkdel(this, function() {
+			$Saltarelle_Utils_IsDirtyCheck.$_inputs = Enumerable.from($(':input').get()).select(function(x) {
+				return ss.cast(x, Object);
+			}).toArray();
+			var id = 0;
+			for (var $t1 = 0; $t1 < $Saltarelle_Utils_IsDirtyCheck.$_inputs.length; $t1++) {
+				var inp = $Saltarelle_Utils_IsDirtyCheck.$_inputs[$t1];
+				inp.onchange = ss.delegateCombine(inp.onchange, $Saltarelle_Utils_IsDirtyCheck.$onChange);
+				$Saltarelle_Utils_IsDirtyCheck.$_originalValues.push(inp.value);
+				id++;
+			}
+			ss.arrayAddRange($Saltarelle_Utils_IsDirtyCheck.$_enableElements, Enumerable.from($(':input[enableOnFormIsDirty]').get()).select(function(x) {
+				return ss.cast(x, Object);
+			}).toArray());
+			ss.arrayAddRange($Saltarelle_Utils_IsDirtyCheck.$_disableElements, Enumerable.from($(':input[disableOnFormIsDirty]').get()).select(function(x) {
+				return ss.cast(x, Object);
+			}).toArray());
+			$Saltarelle_Utils_IsDirtyCheck.$update();
+		}));
+	};
+	$Saltarelle_Utils_IsDirtyCheck.$update = function() {
+		for (var id = 0; id < $Saltarelle_Utils_IsDirtyCheck.$_inputs.length; id++) {
+			if (!ss.referenceEquals($Saltarelle_Utils_IsDirtyCheck.$_inputs[id].value, $Saltarelle_Utils_IsDirtyCheck.$_originalValues[id])) {
+				$Saltarelle_Utils_IsDirtyCheck.$setDirty(true);
+				return;
+			}
+		}
+		$Saltarelle_Utils_IsDirtyCheck.$setDirty(false);
+	};
+	$Saltarelle_Utils_IsDirtyCheck.$onChange = function(event) {
+		$Saltarelle_Utils_IsDirtyCheck.$update();
+	};
+	$Saltarelle_Utils_IsDirtyCheck.$setDirty = function(isDirty) {
+		$Saltarelle_Utils_IsDirtyCheck.isDirty = isDirty;
+		for (var $t1 = 0; $t1 < $Saltarelle_Utils_IsDirtyCheck.$_enableElements.length; $t1++) {
+			var element = $Saltarelle_Utils_IsDirtyCheck.$_enableElements[$t1];
+			if (isDirty) {
+				element.removeAttribute('disabled');
+			}
+			else {
+				element.setAttribute('disabled', 'true');
+			}
+		}
+		for (var $t2 = 0; $t2 < $Saltarelle_Utils_IsDirtyCheck.$_disableElements.length; $t2++) {
+			var element1 = $Saltarelle_Utils_IsDirtyCheck.$_disableElements[$t2];
+			if (isDirty) {
+				element1.setAttribute('disabled', 'true');
+			}
+			else {
+				element1.removeAttribute('disabled');
+			}
+		}
+	};
+	global.Saltarelle.Utils.IsDirtyCheck = $Saltarelle_Utils_IsDirtyCheck;
+	////////////////////////////////////////////////////////////////////////////////
 	// Saltarelle.Utils.jQueryEventMouseWheel
 	var $Saltarelle_Utils_jQueryEventMouseWheel = function() {
 	};
@@ -189,8 +249,16 @@
 	};
 	global.Saltarelle.Utils.Utils = $Saltarelle_Utils_Utils;
 	ss.initClass($Saltarelle_Utils_DateTimeExtension, $asm, {});
+	ss.initClass($Saltarelle_Utils_IsDirtyCheck, $asm, {});
 	ss.initClass($Saltarelle_Utils_jQueryEventMouseWheel, $asm, {});
 	ss.initClass($Saltarelle_Utils_SmartDeviceImage, $asm, {});
 	ss.initClass($Saltarelle_Utils_StaticReflection, $asm, {});
 	ss.initClass($Saltarelle_Utils_Utils, $asm, {});
+	(function() {
+		$Saltarelle_Utils_IsDirtyCheck.isDirty = false;
+		$Saltarelle_Utils_IsDirtyCheck.$_originalValues = [];
+		$Saltarelle_Utils_IsDirtyCheck.$_inputs = [];
+		$Saltarelle_Utils_IsDirtyCheck.$_enableElements = [];
+		$Saltarelle_Utils_IsDirtyCheck.$_disableElements = [];
+	})();
 })();
